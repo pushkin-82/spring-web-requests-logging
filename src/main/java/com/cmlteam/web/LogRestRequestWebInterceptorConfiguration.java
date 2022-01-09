@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -18,7 +19,7 @@ public class LogRestRequestWebInterceptorConfiguration implements WebMvcConfigur
       LOG_REQUEST_WEB_INTERCEPTOR_PROPS + ".enabled";
 
   // In this case autowired in constructor doesn't work
-  @Autowired private LogRestRequestWebInterceptor logRestRequestWebInterceptor;
+  @Autowired @Lazy private LogRestRequestWebInterceptor logRestRequestWebInterceptor;
 
   @Bean
   public LogRestRequestWebInterceptor logRestRequestWebInterceptor() {
