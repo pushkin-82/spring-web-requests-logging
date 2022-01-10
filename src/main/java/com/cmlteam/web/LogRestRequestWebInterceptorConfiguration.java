@@ -20,11 +20,6 @@ public class LogRestRequestWebInterceptorConfiguration implements WebMvcConfigur
   // In this case autowired in constructor doesn't work
   @Autowired private LogRestRequestWebInterceptor logRestRequestWebInterceptor;
 
-  @Bean
-  public LogRestRequestFilter logRestRequestFilter() {
-    return new LogRestRequestFilter();
-  }
-
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     registry.addInterceptor(logRestRequestWebInterceptor);
