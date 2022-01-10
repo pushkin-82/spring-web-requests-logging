@@ -21,11 +21,6 @@ public class LogRestRequestWebInterceptorConfiguration implements WebMvcConfigur
   @Autowired private LogRestRequestWebInterceptor logRestRequestWebInterceptor;
 
   @Bean
-  public LogRestRequestWebInterceptor logRestRequestWebInterceptor() {
-    return new LogRestRequestWebInterceptor();
-  }
-
-  @Bean
   public LogRestRequestFilter logRestRequestFilter() {
     return new LogRestRequestFilter();
   }

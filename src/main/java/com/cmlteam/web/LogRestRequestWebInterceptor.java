@@ -3,6 +3,7 @@ package com.cmlteam.web;
 import com.cmlteam.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.AsyncHandlerInterceptor;
@@ -14,6 +15,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /** We need to use interceptor since in plain web Filter the MultipartRequest is not parsed yet */
+@Component
 public class LogRestRequestWebInterceptor implements AsyncHandlerInterceptor {
   private static final int TRIM_AFTER = 20000;
   private static Logger log = LoggerFactory.getLogger(LogRestRequestWebInterceptor.class);
